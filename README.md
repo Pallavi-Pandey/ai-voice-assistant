@@ -1,4 +1,4 @@
-# AI Voice Assistant
+# Ai Voice Assistant
 
 An interactive voice assistant powered by OpenAI agents and a Flask-based API.
 
