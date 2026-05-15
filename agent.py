@@ -8,7 +8,7 @@ from livekit.agents import (
     AgentSession,
     cli,
 )
-from livekit.plugins import groq, silero
+from livekit.plugins import groq, silero, elevenlabs
 from dotenv import load_dotenv
 
 from api import TOOLS
@@ -26,7 +26,7 @@ async def entrypoint(ctx: JobContext):
         instructions=INSTRUCTIONS,
         stt=groq.STT(model="whisper-large-v3-turbo"),
         llm=groq.LLM(model="llama-3.3-70b-versatile"),
-        tts=groq.TTS(model="canopylabs/orpheus-v1-english", voice="diana"),
+        tts=elevenlabs.TTS(model="eleven_turbo_v2_5"),
         vad=silero.VAD.load(),
         tools=TOOLS,
     )
