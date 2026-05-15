@@ -1,0 +1,7 @@
+services:
+  agent:
+    build: .
+    env_file: .env
+    volumes:
+      - ./vehicles.db:/app/vehicles.db
+    restart: unless-stopped
